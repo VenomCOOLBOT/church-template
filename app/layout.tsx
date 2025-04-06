@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
+import { Analytics } from "@vercel/analytics/react";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://casa-de-oracion-ssd.vercel.app/"),
   title: "Casa de Oración - South San Diego",
   description:
-    "Somos una comunidad de fe comprometida con predicar el Evangelio de manera fiel a la Palabra de Dios. Aquí encontrarás mensajes inspiradores, enseñanza bíblica, adoración, y recursos espirituales para fortalecer tu vida y tu relación con Dios. Únete a nosotros mientras proclamamos que Jesús es el único camino hacia una vida plena y eterna. ¡Suscríbete y sé parte de nuestra misión de compartir el amor y la verdad de Cristo con el mundo!",
+    "Únete a nosotros en adoración y alabanza en Casa de Oración en South San Diego mientras celebramos a nuestro Señor y Salvador, Jesucristo, en nuestra comunidad acogedora.",
   keywords: [
     "iglesia",
     "cristiana",
@@ -64,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Casa de Oración - South San Diego",
     description:
-      "Somos una comunidad de fe comprometida con predicar el Evangelio de manera fiel a la Palabra de Dios. Aquí encontrarás mensajes inspiradores, enseñanza bíblica, adoración, y recursos espirituales para fortalecer tu vida y tu relación con Dios. Únete a nosotros mientras proclamamos que Jesús es el único camino hacia una vida plena y eterna. ¡Suscríbete y sé parte de nuestra misión de compartir el amor y la verdad de Cristo con el mundo!",
+      "Únete a nosotros en adoración y alabanza en Casa de Oración en South San Diego mientras celebramos a nuestro Señor y Salvador, Jesucristo, en nuestra comunidad acogedora.",
     images: ["/twitter.png"],
     creator: "@casadeoracionssd",
     site: "@casadeoracionssd",
@@ -101,6 +102,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`antialiased`}>
+        <Analytics />
         <Header />
         {children}
         <Footer />
