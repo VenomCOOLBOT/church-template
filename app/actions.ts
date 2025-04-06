@@ -60,7 +60,7 @@ export async function sendContactEmail(previousState: PreviousStateType, formDat
       
       ${logoUrl !== "https://casa-de-oracion-ssd.vercel.app/email-logo.png" ? // Only include img tag if URL is set
         `<div style="text-align: center; margin-bottom: 25px;">
-          <img src="${logoUrl}" alt="Your Company Logo" style="max-width: 150px; height: auto; border: 0;">
+          <img src="${logoUrl}" alt="CDO Logo" style="max-width: 150px; height: auto; border: 0;">
         </div>` : ''
       }
 

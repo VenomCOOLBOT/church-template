@@ -9,7 +9,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://casadeoracion.org"),
+  metadataBase: new URL("https://casa-de-oracion-ssd.vercel.app/"),
   title: "Casa de Oración - South San Diego",
   description:
     "Somos una comunidad de fe comprometida con predicar el Evangelio de manera fiel a la Palabra de Dios. Aquí encontrarás mensajes inspiradores, enseñanza bíblica, adoración, y recursos espirituales para fortalecer tu vida y tu relación con Dios. Únete a nosotros mientras proclamamos que Jesús es el único camino hacia una vida plena y eterna. ¡Suscríbete y sé parte de nuestra misión de compartir el amor y la verdad de Cristo con el mundo!",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_ES",
-    url: "https://casa-de-oracion.vercel.app/",
+    url: "https://casa-de-oracion-ssd.vercel.app/",
     siteName: "Casa de Oración - South San Diego",
     title: "Casa de Oración - South San Diego",
 
