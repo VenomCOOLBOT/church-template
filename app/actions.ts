@@ -44,7 +44,7 @@ export async function sendContactEmail(previousState: PreviousStateType, formDat
   const { name, email, message } = contactData;
 
 
-  const logoUrl = "/email-logo.png";
+  const logoUrl = "https://casa-de-oracion-ssd.vercel.app/email-logo.png";
   
   
   const transporter = nodemailer.createTransport({
@@ -58,7 +58,7 @@ export async function sendContactEmail(previousState: PreviousStateType, formDat
   const htmlContent = `
     <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 20px auto; border: 1px solid #ddd; padding: 20px;">
       
-      ${logoUrl !== "/email-logo.png" ? // Only include img tag if URL is set
+      ${logoUrl !== "https://casa-de-oracion-ssd.vercel.app/email-logo.png" ? // Only include img tag if URL is set
         `<div style="text-align: center; margin-bottom: 25px;">
           <img src="${logoUrl}" alt="Your Company Logo" style="max-width: 150px; height: auto; border: 0;">
         </div>` : ''
