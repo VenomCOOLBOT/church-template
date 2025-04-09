@@ -15,16 +15,18 @@ const contactSchema = z.object({
     .max(500, "Message must be at most 500 characters"),
 });
 
-
 export type ContactFormResponse = {
   success: boolean;
   message: string;
-  errors?: z.inferFlattenedErrors<typeof contactSchema>['fieldErrors'];
+  errors?: z.inferFlattenedErrors<typeof contactSchema>["fieldErrors"];
 };
 
 type PreviousStateType = ContactFormResponse | null;
 
-export async function sendContactEmail(previousState: PreviousStateType, formData: FormData) {
+export async function sendContactEmail(
+  previousState: PreviousStateType,
+  formData: FormData
+) {
   const contactData = {
     name: formData.get("name") as string,
     email: formData.get("email") as string,
@@ -43,10 +45,8 @@ export async function sendContactEmail(previousState: PreviousStateType, formDat
 
   const { name, email, message } = contactData;
 
-
   const logoUrl = "https://casa-de-oracion-ssd.vercel.app/email-logo.png";
-  
-  
+
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -57,12 +57,9 @@ export async function sendContactEmail(previousState: PreviousStateType, formDat
 
   const htmlContent = `
     <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 20px auto; border: 1px solid #ddd; padding: 20px;">
-      
-      ${logoUrl !== "https://casa-de-oracion-ssd.vercel.app/email-logo.png" ? // Only include img tag if URL is set
-        `<div style="text-align: center; margin-bottom: 25px;">
+          <div style="text-align: center; margin-bottom: 25px;">
           <img src="${logoUrl}" alt="CDO Logo" style="max-width: 150px; height: auto; border: 0;">
-        </div>` : ''
-      }
+        </div>
 
       <h2 style="color: #a89076; border-bottom: 2px solid #eee; padding-bottom: 10px;">New Contact Form Submission</h2>
       
@@ -85,7 +82,6 @@ export async function sendContactEmail(previousState: PreviousStateType, formDat
 
     </div>
   `;
-
 
   try {
     await transporter.sendMail({
