@@ -3,6 +3,7 @@ import "./globals.css";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -103,6 +104,7 @@ export default function RootLayout({
     <html lang="es">
       <body className={`antialiased`}>
         <Analytics />
+        <SpeedInsights/>
         <Header />
         {children}
         <Footer />
