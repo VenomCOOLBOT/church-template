@@ -86,7 +86,7 @@ export async function sendContactEmail(
   try {
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
-      to: "vern.e.pit@gmail.com",
+      to: "",
       subject: `New Contact Form Submission from ${name}`,
       text: `Email: ${email}\n\nMessage:\n${message}`,
       html: htmlContent,
